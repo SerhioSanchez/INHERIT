@@ -1,14 +1,14 @@
 package ru.netology.InheritTask.services;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class TodosTest {
 
-class TodosTest {
     @Test
     public void shouldAddThreeTasksOfDifferentType() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
-        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
+        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(
@@ -24,7 +24,7 @@ class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        Task[] expected = {simpleTask, epic, meeting};
+        Task[] expected = { simpleTask, epic, meeting };
         Task[] actual = todos.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }

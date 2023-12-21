@@ -1,11 +1,11 @@
 package ru.netology.InheritTask.services;
 
 public class SimpleTask extends Task {
-    protected String title;
+    private String title;
 
     public SimpleTask(int id, String title) {
-        super(id); // вызов родительского конструктора
-        this.title = title; // заполнение своих полей
+        super(id);
+        this.title = title;
     }
 
     public String getTitle() {
